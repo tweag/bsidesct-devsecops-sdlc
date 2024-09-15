@@ -28,7 +28,7 @@ GitHub’s built-in secret scanning feature can detect hardcoded secrets, such a
 2. Under **Code security and analysis**, enable **Secret scanning**.
 3. Detected secrets will be listed under the **Security > Secret scanning** tab.
 
-![Part 2 - Secret in GitHub](./img/reposecret.png "Secret in GitHub")
+![Part 2 - Secret in GitHub](./img/secretsconfig.png "Secret in GitHub")
 
 ### TruffleHog and Tartufo
 
