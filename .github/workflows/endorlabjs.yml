@@ -1,0 +1,25 @@
+name: "Endor Labs: Example Scan of JavaScript"
+on: workflow_dispatch
+jobs:
+  create_project_owasp:
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      contents: read  # Required by actions/checkout@v3 to checkout a private repository
+      actions: read
+      repository-projects: read
+      pull-requests: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          path: main
+      - name: Scan JS with Endor Labs
+        uses: endorlabs/github-action@main # This workflow uses the Endor Labs GitHub action to scan.
+        with:
+          namespace: 'bsideslv_demo'
+          scan_summary_output_type: 'json'
+          pr: false
+          scan_secrets: true
+          scan_dependencies: true
+          log_verbose: true
