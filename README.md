@@ -1,65 +1,76 @@
+![Bsides Logo 2024 Logo](bsides_ct_logo.png "BSides Logo")
 
-# Template Repository - Shifting Security Left a Hands On Workshop
+# DevSecOps and Securing your SDLC
 
-The following repository contains training material workshops on shifting security left.
+This repository contains training materials for workshops on DevSecOps and Securing your Software Development Lifecycle (SDLC).
 
-This workshop is held at venue `X` on `DATE` at `TIME`.
+The workshop will be held at `BSides CT` on `Saturday, 21st September`. The exact time will be announced soon.
 
 ## Workshop Outline
 
-*Shifting Security Left a Hands On Workshop* provides participants with an introduction to baking security into the software development process and leveraging DevSecOps tooling to support this. 
+In this workshop, you'll learn the basics of DevSecOps and securing your SDLC using a range of tools. We'll explore both open-source options and those native to GitHub. Participants will learn how to set up IDE plugins, pre-commit hooks, and other techniques to secure their development environment. We will also cover building a CI/CD pipeline using DevSecOps concepts, including secrets scanning, dependency analysis, and Static Analysis Security Testing (SAST).
 
-Attendees will learn about setting up a local development environment which includes security tools such as IDE plugins. Students will then progress into learning how to use DevSecOps pipelines to detect security issues such as accidentally committed secrets.
+## Pre-Setup Phase
 
-The workshop will then wrap up with tips on how to handle secure deployments and a look to what the future holds in this space.
+Before participating in this workshop, you’ll need to create a GitHub account.
 
-## Pre-setup Phase
+- You can sign up at [GitHub](https://www.github.com).
+- If you're a student, you can sign up with a `.edu` email to get free private repositories and other benefits.
 
-In order to fully participate in this workshop you will need a GitHub account.
+Once your account is set up, you will need to `Fork` and `Clone` this repository.
 
-You can obtain this by signing up at http://www.github.com. 
+A complete guide for setting up the necessary tools is available in the Part 1 README file. This workshop will focus on using GitHub Codespaces.
 
-Students will be able to sign up for a .edu account which comes with some added bonuses, such as being able to setup private repositories for free.
+[Part 1 - Security within the development environment](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part1#part-1---security-within-the-development-environment)
 
-Once your account is setup, you will need to `Fork` and `Clone` this repository.
+## Part 1: Security within the Development Environment
 
-A full guide to setting up the tooling for this workshop can be found in the Part 1 README file.
+Attendees will learn how to integrate security tools and pre-commit hooks into their development environment to enhance code security from the start.
 
-[Part 1 - Security within the development environment](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part1#part-1---security-within-the-development-environment)
+1. **Third-Party Plugin Integration**: We’ll explore tools like SonarLint, which can be integrated into the IDE to aid in linting and SAST. We will also review GitHub Copilot.  
+   [Part 1 - Module 1: IDE Integration](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part1#module-1-ide-integration)
 
+2. **Pre-Commit Hooks**: This section covers setting up pre-commit hooks using Talisman.  
+   [Part 1 - Module 2: Pre-Commit Hooks](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part1#module-2-pre-commit-hooks)
 
-## Part 1: Security within the development environment
+3. **Git Ignore**: You will learn how to use `.gitignore` files to prevent committing sensitive or unwanted files.  
+   [Part 1 - Module 3: Preventing Accidental Commits](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part1#module-3-preventing-accidental-commits)
 
-Attendees will learn to integrate security tools and pre-commit hooks into their development environment thus enhancing code security off the bat:
+## Part 2: Repository Scanning and Advanced Analysis
 
-1. 3rd party plugin integration. In this part of the talk we explore third-party tooling that can be integrated into the IDE to aid in linting and SAST. An example here includes the SonarLint plugin. We also look at CodeQL and GitHub Copilot [Part 1 - Module1: IDE Integration](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part1#module-1-ide-integration)
+We will cover repository scanning techniques, including secrets scanning and vulnerability detection, using tools like GitHub's Dependabot and Tartufo. Additionally, we will explore Endor Labs' advanced features for reachability analysis, SBOM generation with VEX reachability data, and running SCA tests locally.
 
-2. Setting up pre-commit hooks to aid in security will be explored. This includes tools such as AWS Labs git-secrets and Talisman. [Part 1 - Module2: pre-commit Hooks](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part1#module-2-pre-commit-hooks)
+1. **Secrets Scanning**: Learn how to scan for secrets in your source code using tools like Tartufo/TruffleHog, GitHub, and Horusec.  
+   [Part 2 - Module 4: Secrets Scanning](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-4secrets-scanning)
 
-3. Git ignores. Git ignore files are a great way of preventing config files which may contain secrets, and other undesirable files such as .zips accidentally being committed. In this portion of the talk we provide practical examples of using .gitignore to aid in security. [Part 1 - Module 3: Preventing accidental commits](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part1#module-3-preventing-accidental-commits)
+2. **Handling Secrets in GitHub**: Learn how to store and handle secrets securely in GitHub.  
+   [Part 2 - Module 5: Handling Secrets in GitHub](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-5handling-secrets-in-github)
 
+3. **Detecting Security Vulnerabilities**: Understand how to detect security vulnerabilities in your repository.  
+   [Part 2 - Module 6: Detecting Security Vulnerabilities](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-6detecting-security-vulnerabilities)
 
-## Part 2: Repository Scanning
+4. **Vulnerable Dependency Detection**: Learn how to detect vulnerable dependencies using GitHub's Dependabot.  
+   [Part 2 - Module 7: Vulnerable Dependencies](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-7vulnerable-dependencies)
 
-Here we cover some repository scanning techniques, including secrets scanning and vulnerability detection, using tools like GitHub's dependabot and Tartufo.
+5. **Static Analysis**: This section covers GitHub's SAST tool built on CodeQL and other tools like Horusec.  
+   [Part 2 - Module 8: Static Analysis](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-8static-analysis)
 
-1. Secrets scanning. A demonstration of how secret scanning can be performed in the source code. This includes examples of Tartufo/TruffleHog, GitHub's tooling and Horusec. [Part 2 - Module 4:Secrets Scanning](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part2#module-4secrets-scanning)
+6. **Branch Protection and PR Gating**: Learn about using branch protection rules to enforce security checks on pull requests.  
+   [Module 9: Branch Protection Rules](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-9branch-protection-rules)
 
-2. Handling secrets in GitHub. GitHub provides users the ability to store secrets such as API keys securely within the SCM, and pull these out at deployment time. Here participants learn the basics of the environment within GitHub and how to leverage GitHub native secret storage mechanisms. We will also discuss other options for storing secrets and pulling them into CI/CD pipelines [Part 2 - Module 5: Handling secrets in GitHub](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part2#module-5handling-secrets-in-github)
+7. **SBOMs (Software Bill of Materials)**: Explore how to extract and use SBOMs from your GitHub repositories.  
+   [Part 2 - Module 10: SBOMs](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-10sboms-software-bill-of-materials)
 
-3. Detecting security vulnerabilities within the repository. Students are introduced to the concept of detecting security vulnerabilities in the source code repository. A general overview of techniques and approaches is given, as well as those specific to GitHub.[Part 2 - Module 6:Detecting Security vulnerabilities](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part2#module-5handling-secrets-in-github)
+8. **Endor Labs Reachability Analysis**: Learn how Endor Labs' reachability analysis helps prioritize security findings by identifying which vulnerabilities in your code are actually exploitable.  
+   [Part 2 - Module 11: Endor Labs Reachability Analysis](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-11endor-reachability-analysis)
 
-4. Vulnerable dependency detection. GitHub's dependabot provides a mechanism for analyzing the dependencies associated with a project and understanding if they contain security vulnerabilities. Walkthrough of dependabot is performed. [Part 2 - Module 7:Vulnerable dependencies](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part2#module-7vulnerable-dependencies) 
+9. **Generating SBOM with VEX Reachability Data**: Understand how to generate Software Bill of Materials (SBOM) with VEX (Vulnerability Exploitability eXchange) reachability data to provide insights into whether vulnerabilities found in components are actually reachable.  
+   [Part 2 - Module 12: Generating SBOM with VEX](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-12sbom-vex-reachability)
 
-5. Static analysis. GitHub Advanced Security contains a GitHub native SAST tool built on CodeQL. This section of the class walks through its feature sets and how it can be integrated into GitHub actions. This section of the talk will also cover Horusec and how it cane be used in the same capacity.[Part 2 - Module 8:Static Analysis](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part2#module-8static-analysis)
+10. **Running an SCA Test Locally**: Discover how to run a Software Composition Analysis (SCA) test locally using Endor Labs tools, ensuring your dependencies are secure before pushing code to a repository.  
+   [Part 2 - Module 13: Running an SCA Test Locally](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-13sca-test-locally)
 
-6. Branch protection and pull request gating mechanisms. The penultimate topic covered is how branch protection rules and PR gating mechanisms can leverage SAST tools to block pull requests that fail security checks.[Module 9:Branch protection rules](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part2#module-9branch-protection-rules)
+## Wrap-Up
 
-7. SBOMs. A final note on SBOMs. These can be used to extract a Software Bill of Materials from your applications stored in GitHub. [Part 2 - Module 10:SBOMs Software Bill of Materials](https://github.com/tweag/dev-sec-ops-workshop/tree/main/part2#module-10sboms-software-bill-of-materials)
-
-## Wrap-up
-
-Discussion of future trends in this space.
-
-Recap of what we've learned
+We'll conclude with a discussion on future trends in DevSecOps and a recap of the topics covered in this workshop.
 
