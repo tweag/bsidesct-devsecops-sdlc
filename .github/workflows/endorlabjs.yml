@@ -1,7 +1,11 @@
 name: "Endor Labs: Example Scan of JavaScript"
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  schedule:
+    - cron: '34 3 * * 0'
 jobs:
   create_project_javascript:
     permissions:
