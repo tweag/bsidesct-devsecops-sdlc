@@ -29,7 +29,7 @@ jobs:
       - name: 'Scan JS with Endor Labs'
         uses: endorlabs/github-action@main # This workflow uses the Endor Labs GitHub action to scan.
         with:
-          namespace: 'bsideslv_demo.endor_labs_ref_arch'
+          namespace: 'bsidesct'
           pr: false
           scan_secrets: true
           scan_dependencies: true

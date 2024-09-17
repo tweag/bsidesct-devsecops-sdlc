@@ -1,4 +1,4 @@
-name: Horusec_Scan
+name: "Horusec SAST Scan"
 
 on: [push]
 

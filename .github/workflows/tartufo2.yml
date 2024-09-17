@@ -1,4 +1,4 @@
- 
+name: "Tartufo Secrets Scan" 
 on:
   push:
     branches:
