@@ -322,7 +322,7 @@ jobs:
 
 When you create a new pull request, this Action will trigger.
 
-You can try it out by opening this README file, and editing the following message from False to True:
+You can try it out by opening this README file, and editing the following message from `False` to `True`:
 
 ```
 Testing Endor Labs = False
