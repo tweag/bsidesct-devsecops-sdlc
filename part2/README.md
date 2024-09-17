@@ -260,6 +260,77 @@ Here is an example of an SBOM generated in JSON format:
 
 ![Part 2 - SBOM and Endor Labs](./img/endorlabs.png "SBOM and Endor Labs")
 
+We can integrate a repository in Endor labs through a number of simple steps.
+
+If you haven't created a new account and Tenant, start by visiting the Endor Labs website, and signing up: https://www.endorlabs.com. You can sue your GitHub ID to sign up.
+
+Once this is setup you will have a default Tenant and Namespace. For this demo we can stick with these. When you created your account, you will have been prompted to create a new tenant. Make a note of the name, as we will use this shortly.
+
+Next we need to setup an Access Control policy, so that GitHub and Endor Labs can communicate. To do this:
+
+1. Navigate to the Access Control menu listed in the bottom left of the screen.
+2. Create a new `AUTH POLICY`
+3. The `ID Provider` should be the GitHub Action option
+4. You need to update the rule so that it should be `user=<your GitHub Org name>` make sure you add in your Org or user here
+5. Permissions should be `Code Scanner`
+6. Under `Advanced`, set the namespace to yours (this will be your tenant name), and select the `Propagate this policy to all child namespaces option` if you wish
+
+You can now go ahead and add the following Action to run scans against the JS code in this repository, and push the results up to Endor Labs. Make sure to replace the namespace in this file with yours.
+
+```yaml
+
+name: "Endor Labs: Example Scan of JavaScript"
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  create_project_javascript:
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      contents: read  # Required by actions/checkout@v4 to checkout a private repository
+      actions: read
+      repository-projects: read
+      pull-requests: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+      - name: 'Use Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - run: npm ci
+        working-directory: ./part2/VulnerableAppTwo
+      - run: npm run build --if-present
+        working-directory: ./part2/VulnerableAppTwo
+      - name: 'Scan JS with Endor Labs'
+        uses: endorlabs/github-action@main # This workflow uses the Endor Labs GitHub action to scan.
+        with:
+          namespace: '<add your tenant namespace here>'
+          pr: false
+          scan_secrets: true
+          scan_dependencies: true
+          log_verbose: true
+          scan_summary_output_type: 'table'
+          sarif_file: 'findings.sarif'
+      - name: 'Upload findings to GitHub'
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'findings.sarif'
+
+```
+
+When you create a new pull request, this Action will trigger.
+
+You can try it out by opening this README file, and editing the following message from False to True:
+
+```
+Testing Endor Labs = False
+
+```
+
+Commit the change to this README to a new branch, and create a pull request and merge it.
+
 ---
 
 ## Module 12: Generating SBOM with VEX Reachability Data
