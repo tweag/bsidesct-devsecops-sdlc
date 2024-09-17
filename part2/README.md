@@ -331,6 +331,8 @@ Testing Endor Labs = False
 
 Commit the change to this README to a new branch, and create a pull request and merge it.
 
+We can now switch to the Endor Labs dashboard and see the data populating the security dashboard.
+
 ---
 
 ## Module 12: Generating SBOM with VEX Reachability Data
