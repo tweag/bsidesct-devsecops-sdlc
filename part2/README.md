@@ -343,6 +343,17 @@ By adding VEX (Vulnerability Exploitability eXchange) data to your SBOM, you can
 1. Export your SBOM in SPDX format.
 2. Enrich it with VEX data using Endor Labs’ tools.
 
+You can export the SBOM from the previously shown `Export SBOM` button under the `Dependency graph` page.
+
+Once you have done this, switch to the Endor Labs dashboard.
+
+From the left hand menu select the SBOM Hub item. This will allow you to upload the SBOm you just exported from GitHub.
+
+Select the `Import SBOM` button and change the `Select SBOM Kind` to SPDX.
+
+
+
+
 ---
 
 ## Module 13: Running SCA Locally
