@@ -1,13 +1,21 @@
 name: "Endor Labs: Example Scan of OWASP Java"
-on: workflow_dispatch
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 jobs:
   create_project_owasp:
     permissions:
       id-token: write # This is required for requesting the JWT
+      contents: read  # Required by actions/checkout@v4 to checkout a private repository
+      actions: read
+      repository-projects: read
+      pull-requests: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: OWASP-Benchmark/BenchmarkJava
       - name: Setup Java
@@ -20,7 +28,7 @@ jobs:
       - name: Scan with Endor Labs
         uses: endorlabs/github-action@main # This workflow uses the Endor Labs GitHub action to scan.
         with:
-          namespace: 'moduscreate_pcl_sandbox'
+          namespace: 'bsidesct'
           scan_summary_output_type: 'json'
           pr: false
           scan_secrets: true
