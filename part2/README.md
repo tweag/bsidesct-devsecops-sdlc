@@ -11,7 +11,6 @@ In this section, we will cover several techniques for repository scanning and pe
 6. **CodeQL**
 7. **Endor Labs Reachability Analysis**
 8. **SBOM with VEX Reachability Data**
-9. **Running SCA Locally**
 
 ---
 
@@ -337,35 +336,12 @@ We can now switch to the Endor Labs dashboard and see the data populating the se
 
 ## Module 12: Generating SBOM with VEX Reachability Data
 
-By adding VEX (Vulnerability Exploitability eXchange) data to your SBOM, you can determine if the vulnerabilities found in your dependencies are exploitable within your code.
-
-#### Steps:
-1. Export your SBOM in SPDX format.
-2. Enrich it with VEX data using Endor Labs’ tools.
-
-You can export the SBOM from the previously shown `Export SBOM` button under the `Dependency graph` page.
-
-Once you have done this, switch to the Endor Labs dashboard.
-
-From the left hand menu select the SBOM Hub item. This will allow you to upload the SBOm you just exported from GitHub.
-
-Select the `Import SBOM` button and change the `Select SBOM Kind` to SPDX.
+Walk though in UI
 
 
 
 
----
 
-## Module 13: Running SCA Locally
-
-Running Software Composition Analysis (SCA) tests locally is essential to check your dependencies for known vulnerabilities before committing them to the repository.
-
-#### Example Command:
-```bash
-scantool run --local
-```
-
-This will scan your project’s dependencies and report any vulnerabilities.
 
 ---
 
