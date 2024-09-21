@@ -72,3 +72,5 @@ We will cover repository scanning techniques, including secrets scanning and vul
 
 We'll conclude with a discussion on future trends in DevSecOps and a recap of the topics covered in this workshop.
 
+test
+
