@@ -67,8 +67,6 @@ We will cover repository scanning techniques, including secrets scanning and vul
 9. **Generating SBOM with VEX Reachability Data**: Understand how to generate Software Bill of Materials (SBOM) with VEX (Vulnerability Exploitability eXchange) reachability data to provide insights into whether vulnerabilities found in components are actually reachable.  
    [Part 2 - Module 12: Generating SBOM with VEX](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-12sbom-vex-reachability)
 
-10. **Running an SCA Test Locally**: Discover how to run a Software Composition Analysis (SCA) test locally using Endor Labs tools, ensuring your dependencies are secure before pushing code to a repository.  
-   [Part 2 - Module 13: Running an SCA Test Locally](https://github.com/tweag/bsidesct-devsecops-sdlc/tree/main/part2#module-13sca-test-locally)
 
 ## Wrap-Up
 
