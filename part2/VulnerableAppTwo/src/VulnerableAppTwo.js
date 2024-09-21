@@ -29,8 +29,8 @@ app.post('/api/submit', (req, res) => {
 // Route: SQL (NoSQL) Injection
 app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
-  // Unsafe query
-  const user = await User.findOne({ username: username, password: password });
+  // Safe query using $eq operator
+  const user = await User.findOne({ username: { $eq: username }, password: { $eq: password } });
   if (user) {
     res.send('Login successful');
   } else {
