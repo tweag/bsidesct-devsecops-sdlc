@@ -347,6 +347,8 @@ Walk though in UI
 
 ## Wrap-Up
 
+Github actions learning material https://learn.microsoft.com/en-us/training/modules/introduction-to-github-actions/
+
 In this workshop, we have covered:
 - Secrets scanning with GitHub, TruffleHog, and Tartufo.
 - Handling secrets securely with GitHub Actions.
